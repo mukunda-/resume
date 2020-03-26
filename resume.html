@@ -2,50 +2,57 @@
 <html>
    <head>
       <meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="description" content="Mukunda Johnson's Programmer Résumé">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="description" content="Mukunda Johnson's Programmer Résumé">
       <style>
 /* ------------------------------------------------------------------------- */
-/* Need a nice style to impress employers! Who cares what's on the page!     */
+/* Need a nice style to impress employers. Who cares what's on the page!     */
 /* Don't read this, employers. :)                                            */
 
 /* Our beautiful font collection for this page. */
+/* Not real sure if Roboto is my best choice though. */
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&display=swap');
 
-/* Setup basic defaults in here. */
+/* Set up basic defaults in here. */
 body {
-   /* The page will have outer margins. */
+   /* The margins are part of .page. */
    margin: 0px;
    
    /* Color outside of the page. The backdrop. */
    background-color: #eee;
    
-   /* Not sure if I like this font. */
    font-family: Roboto;
    
-   /* I hope this isn't too small. Can't have too many words on a résumé, either.*/
+   /* I hope this isn't too small. Can't have too many words on a résumé, either. */
    font-size: 11pt;
 }
 
-/* Résumé paper has to be THIS SIZE. NO EXCEPTIONS. */
+/* Main container, size of a paper. */
 .page {
+   /* Résumé paper has to be THIS SIZE. NO EXCEPTIONS. */
+   /* Never really used inches specifier before. */
    width: 8.5in;
    height: 11in;
    box-sizing: border-box;
    
-   /* Center the paper on the display. */
+   /* Center the paper on the display, and offset it a little vertically. */
    margin: 32px auto;
-   box-shadow: 0px 0px 8px rgba( 0, 0, 0, 0.25 );
+   
+   /* A faint shadow to make it pop. */
+   box-shadow: 0px 0px 4px rgba( 0, 0, 0, 0.1 );
+   
+   /* A faint shadow to make it pop. */
    background-color: #fff;
 }
-
 
 /* ------------------------------------------------------------------------- */
 /* A slick left column to bullet my toolkit and highlight personal info.     */
 .side-column {
+   /* 2-inch column. */
    width: 2in;
    height: 100%;
+   float: left;
    
    /* Include padding in overall size. */
    box-sizing: border-box;
@@ -53,10 +60,11 @@ body {
    
    /* Millenial Blue by Skyblue2u (colourlovers.com). */
    background-color: #025D8C;
-   color: white;
-   float: left;
+   
+   /* Condensed font for this. */
    font-family: Roboto Condensed;
    font-size: 12pt;
+   color: white;
 }
 
 /* For a resume photo. But for some reason photos are not recommended. */
@@ -69,27 +77,32 @@ body {
    width: 100%;
    filter: drop-shadow( 0px 0px 1px rgba(255, 255, 255, 0.5));
 }
+
+/* Name field, large imposing letters. */
 .side-column .name {
    font-size: 1.0em;
-   letter-spacing: 1.15px;
+   letter-spacing: 1.15px; /* Adjust this to fill the width. */
    font-weight: bold;
    text-transform: uppercase;
    border-bottom: 1px solid #fff;
 }
 
+/* The line under the name. */
 .side-column .profession {
    font-weight: 300;
    font-size: 0.8em;
    text-transform: uppercase;
 }
 
+/* The dividers. */
 .side-column .header {
    font-weight: bold;
-   text-transform:uppercase;
+   text-transform: uppercase;
    margin-top: 0.1in;
    border-bottom: 1px solid #fff;
 }
 
+/* Give lists a little more modern feel. */
 .side-column ul {
    font-size: 0.9em;
    list-style-type: square;
@@ -101,115 +114,126 @@ body {
    padding-left:none;
    #background-color:red;
 }
-/*
-.side-column li.expert:after {
-   content: "EXPERT";
-   float: right;
-   font-weight: bold;
-   font-size: 0.8em;
 
-   transform: scale(1, 0.7);
-   
-   /* A little quick and dirty hack... don't look. 
-   position: relative;
-   top: 2px;
-   
-}*/
-
+/* The contact links under the name. */
 .side-column .link {
    font-size: 0.8em;
    margin-top: 0.1in;
 }
 
-.side-column img {
+/* Override Google Voice extension style. */
+.gc-cs-link {
+   color: inherit !important;
+   text-decoration: inherit !important;
+}
+
+.side-column .link img {
    vertical-align: middle;
    margin-right: 0.05in;
    margin-left: -2px;
+   
+   /* A bit difficult to get the positioning for these kinds of things to
+      feel just right. */
+   position: relative;
+   top: -1px;
 }
 
 /* ------------------------------------------------------------------------- */
 /* Main content entities. */
-
 .main-column {
-   text-align: justify;
    width: 6.5in;
    height: 11in;
-   box-sizing: border-box;
-   --padding: 0.2in;
    float: right;
+   box-sizing: border-box;
+   text-align: justify;
 }
 
-.main-column-padding {
-   padding: 0 0.2in 0.2in 0.2in;
-}
-
+/* Section dividers. */
 .main-column .header {
    font-weight: bold;
-   text-transform:uppercase;
+   font-size: 1.2em;
+   text-transform: uppercase;
+   border-bottom: 1px solid #025D8C;
+   
+   margin: 0.1in 0.2in 0 0.2in;
+   color: #025D8C;
+}
+
+/* These are a little iffy. Should ul be in a container or no? */
+.main-column ul, .main-column ol {
+   margin-left: 0.05in;
    margin-top: 0.1in;
-   border-bottom: 1px solid #000;
-   margin-left: 0.2in;
    margin-right: 0.2in;
 }
 
+/* Square bullets give a little more of a modern feel. */
 .main-column ul {
-   margin-left: 0.1in;
-   margin-right: 0.2in;
    list-style-type: square;
 }
 
-.main-column ol {
-   margin-left: 0.1in;
-   margin-right: 0.2in;
-}
-
+/* A nice little quote at the top to start things off. */
 .special-seasoning {
    font-style: italic;
    font-family: Constantia;
    font-size: 0.8em;
    margin-top: 0px;
    text-align: center;
-   background: #eee;
+   background: #eee; /* eee is my goto for a softer white. */
    padding: 0.2in;
 }
 
+/* A bolder text for the work sample titles. */
 .work-sample-title {
    margin: 0.1in 0.2in 0 0.2in;
    font-weight: bold;
 }
 
+/* The technology stack is detailed under the title. */
 .work-sample-stack {
    margin: 0 0.2in 0 0.2in;
    text-transform: uppercase;
    font-size: 0.75em;
 }
+
+/* Links are given under the stack. */
 .work-sample-link {
-   margin: 0 0.2in 0 0.2in;
-}
-.work-sample-link a {
-   text-decoration: none;
-   color: inherit;
-   font-size: 0.8em;
-}
-.work-sample-desc {
-   margin: 0.1in 0.2in 0.1in 0.2in;
+   margin: 0 0.2in;
 }
 
+/* Links are given under the stack. */
+.work-sample-link a {
+   font-size: 0.8em;
+}
+
+/* The main content blurbs for work samples. */
+.work-sample-desc {
+   margin: 0.1in 0.2in;
+}
+
+/* The section that notes additional sample requests. */
 .work-sample-footer {
    font-size: 0.8em;
    font-style: italic;
    text-align: center;
-   margin: 0.1in 0.0in;
+   margin: 0.1in 0;
    padding: 0.1in;
    background: #eee;
 }
 
+/* A little subtext under the work history title. */
 .work-history-note {
    font-size: 0.8em;
    font-style: italic;
    margin: 0;
 }
 
+/* The year range. I'm pretty sure floats don't belong in <p>, but it works. :) */
+.work-history-duration {
+   font-size: 0.8em;
+   float: right;
+}
+
+/* Default superscript size seems way too big. */
 sup {
    font-size: 0.6em;
 }
@@ -386,7 +410,7 @@ a {
 
 <p class="special-seasoning">
    <!-- I really like this quote. -->
-   “Thoroughly conscious ignorance . . . is a prelude to every real advance in knowledge.” – James Clerk Maxwell
+   “Thoroughly conscious ignorance is the prelude to every real advance in knowledge.” – James Clerk Maxwell
 </p>
 <div class="header">
    About Me
@@ -418,8 +442,7 @@ a {
          its unique impact on their community.
       </li><li>
          <!-- I'll avoid too many stupid comments in production code. -->
-         Very familiar with best coding practices and learning new
-         technologies.
+         Very experienced with best coding practices and training myself in new fields.
       </li><li>
          <!-- On windows, the cancel button is on the right. On Mac,
               it's backwards. -->
@@ -437,7 +460,7 @@ a {
          <!-- Like seriously, if you say something is okay the first time, I know
               you're holding back. -->
          Values honest criticism. While creating something, I will
-         insist that you tell me what you don't like about it.
+         insist that my peers tell me what they don't like about it.
       </li><li>
          <!-- Kinda hard otherwise when you don't go to school. -->
          Programming has always been my passion, not my career.
@@ -446,7 +469,7 @@ a {
          Loves to discuss technology.
       </li><li>
          Always learning and reminding myself that there is room to
-         grow. Enjoys watching conference talks and reading blogs.
+         grow. Enjoys conference talks and reading blogs.
       </li>
    </ul>
 </p>
@@ -457,7 +480,7 @@ a {
    <!-- Some of my latest projects are actually pretty cool. Like,
         generating and modifying Google Documents, and using them
         like information storage? Very neato. -->
-   Community Application Software (2020)
+   Community Application Site (2020)
 </div>
 <div class="work-sample-stack">
    HTML, CSS, Python, MySQL, JavaScript, jQuery, Google Apps Script, Discord
@@ -475,7 +498,7 @@ a {
    JavaScript back-end utilizing MySQL and Google Apps Script API
    to create, update, and read generated Google Documents and integrate
    with Discord for automatic notifications. JavaScript, HTML, and
-   CSS front-end with high focus on a very pleasant user experience.
+   CSS front-end with high focus on a smooth and intuitive user experience.
 </p>
 
 <!--
@@ -536,21 +559,43 @@ a {
    Work History
 </div>
 <ul>
-   <li>Construction/Apprentice<span style="float:right">2004–2008, 2013–2016</span><br>
-   <p class="work-history-note">Including construction of two houses from the ground up.</p></li>
-   <li>Part-time chef's aid at Govinda's Buffet (Denver) <span style="float:right">2011–2013</span></li>
-   <li>Various Software Freelance Coding and Consulting <span style="float:right">2004–Current</span>
-   <p class="work-history-note">Datel (UK), Crunchy Development (@StoneCypher), Piko Interactive, Individuals</p>
+   <li>
+      <!-- We were supposed to stay in the first house, but we sold it to
+           move... -->
+      Construction/Apprentice
+      <span class="work-history-duration">2004–2008, 2013–2016</span>
+      <p class="work-history-note">
+         A healthy balance to my programming pursuits, this is my family's
+         trade and includes construction of two houses from the ground up and
+         hands on experience with foundation, framing, flooring, drywall,
+         electrical, plumbing, and HVAC.
+      </p>
+   </li>
+   <li>
+      <!-- I make a mean loaf of cinnamon raisin bread. -->
+      Part-time Chef's Aid at Govinda's Buffet (Denver)
+      <span class="work-history-duration">2011–2013</span>
+      <p class="work-history-note">
+         An odd job at an odd time. Denver is a beautiful city and you should
+         visit this restaurant if you ever have a chance.
+      </p>
+   </li>
+   <li>
+      Various Freelance Coding and Consulting
+      <span class="work-history-duration">2004–Current</span>
+      <p class="work-history-note">Datel (UK), Crunchy Development (@StoneCypher), Piko Interactive, and other individuals.</p>
+   </li>
 </ul>
+
+
 <div class="header">
+   <!-- Just a divider. -->
 </div>
 <div class="notes">
    <ol>
       <li>This résumé is hand-written by me in HTML and CSS – <a href="https://github.com/mukunda-/resume">github.com/mukunda-/resume</a>.</li>
       <li>What I was entertaining myself with in 2007 – <a href="http://mukunda.com/stuff/SPCTECH.html">mukunda.com/stuff/SPCTECH.html</a></li>
-      <li><a href="https://stackoverflow.com/questions/59779811/">stackoverflow.com/questions/59779811/</a></li>
    </ol>
-   
 </div>
 
 <!----------------------------- END MAIN COLUMN ------------------------------>
