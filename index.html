@@ -4,6 +4,7 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="description" content="Mukunda Johnson's Programmer Résumé">
+      <title>Mukunda Johnson – Programmer</title>
       <style>
 /* ------------------------------------------------------------------------- */
 /* Need a nice style to impress employers. Who cares what's on the page!     */
@@ -238,10 +239,12 @@ sup {
    font-size: 0.6em;
 }
 
+/* The footnotes at the bottom. */
 .notes {
    font-size: 0.8em;
 }
 
+/* Hide all anchor styles, as this should look like a physical paper. */
 a {
    color: inherit;
    text-decoration: inherit;
@@ -250,13 +253,14 @@ a {
 /* A little magic to make the "Print to PDF" feature work. You should also
  * set the margins for the result to None in the print settings.             */
 @media print and (color) {
-  * {
-    -webkit-print-color-adjust: exact; 
-    print-color-adjust: exact;
-  }
-  .page {
-    margin: 0;
-  }
+   * {
+      -webkit-print-color-adjust: exact; 
+      print-color-adjust: exact;
+   }
+   .page {
+      /* Remove the margins around the page when printing. */
+      margin: 0;
+   }
 }
 
 /* ------------------------------------------------------------------------- */
@@ -273,10 +277,10 @@ a {
 <div class="profession">Programmer</div>
 
 <!-- Contact information. -->
-<div class="link"><img src="home.png">Carriere, MS</div>
-<div class="link"><a href="mailto:mukunda@mukunda.com"><img src="mail.png">mukunda@mukunda.com</a></div>
-<div class="link"><a href="https://github.com/mukunda-"><img src="octocat.png">github.com/mukunda-</a></div>
-<div class="link"><img src="cell.png">601-463-5358</div>
+<div class="link"><img src="img/home.png">Carriere, MS</div>
+<div class="link"><a href="mailto:mukunda@mukunda.com"><img src="img/mail.png">mukunda@mukunda.com</a></div>
+<div class="link"><a href="https://github.com/mukunda-"><img src="img/octocat.png">github.com/mukunda-</a></div>
+<div class="link"><img src="img/cell.png">601-463-5358</div>
 
 <!-- Keyword current, because I learn new stuff a lot. -->
 <div class="header">Current Skills</div>
