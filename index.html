@@ -5,6 +5,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=8.5in">
       <meta name="description" content="Mukunda Johnson's Programmer Résumé">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <title>Mukunda Johnson – Programmer</title>
       <style>
 /* ------------------------------------------------------------------------- */
@@ -188,18 +189,25 @@ body {
 .work-sample-title {
    margin: 0.1in 0.2in 0 0.2in;
    font-weight: bold;
+   font-size: 1.1em;
 }
 
 /* The technology stack is detailed under the title. */
 .work-sample-stack {
-   margin: 0 0.2in 0 0.2in;
+   margin: 0 0.0in 0 0.2in;
    text-transform: uppercase;
-   font-size: 0.75em;
+   font-size: 0.8em;
+   float: right;
+   font-weight: normal;
+   text-align: right;
+   line-height: 1.35em;
 }
+
+.work-sample-stack .stack {}
 
 /* Links are given under the stack. */
 .work-sample-link {
-   margin: 0 0.2in;
+   margin: -0.025in 0.2in 0;
 }
 
 /* Links are given under the stack. */
@@ -375,7 +383,7 @@ a {
    <!-- I write a mean Visual Basic program. -->
    <li>Visual Studio</li>
    <!-- Firefox has great developer tools too. -->
-   <li>Chrome Dev Tools</li>
+   <li>Chrome DevTools</li>
    <!-- For all your Nintendo Needs. -->
    <!-- <li>devKitPro</li> -->
    <!-- Once upon a time I had a dream that I would implement
@@ -436,7 +444,7 @@ a {
          See my GitHub. <!-- Peep my GitHub. -->
       </li><li>
          <!-- I didn't even know where to put the money. -->
-         Developed and sold first game to Datel Electronics (UK)
+         Sold first game to Datel (UK)
          when I was 14.
       </li><li>
          <!-- On windows, the cancel button is on the right. On Mac,
@@ -451,11 +459,10 @@ a {
          My projects often attract attention – Blizzard
          Entertainment's World of Warcraft Game Director talked
          about my project in live Q&amp;A session due to
-         its unique impact on their community.
+         its unique impact.
       </li><li>
          <!-- Been writing technical documents since I was a wee thing. -->
-         Prolific hobbyist writer – it shows in my technical
-         documents.
+         Prolific hobbyist writer – enamored by the profound art of composing words.
       </li><li>
          <!-- Comes with a side of ADHD. -->
          Analytical – I find problems early and offer
@@ -482,26 +489,31 @@ a {
         generating and modifying Google Documents, and using them
         like information storage? Very neato. -->
    Community Application Site (2020)
+   <div class="work-sample-stack">
+      <span class="stack">HTML</span>
+      <span class="stack">CSS</span>
+      <span class="stack">Python</span>
+      <span class="stack">MySQL</span>
+      <span class="stack">JavaScript</span>
+      <br>
+      <span class="stack">Google Apps Script</span>
+      <span class="stack">Discord</span>
+   </div>
 </div>
-<div class="work-sample-stack">
-   HTML, CSS, Python, MySQL, JavaScript, jQuery, Google Apps Script, Discord
-</div>
+
 <div class="work-sample-link">
    <a href="https://github.com/tmg-pub/tfrapp">github.com/tmg-pub/tfrapp</a>
 </div>
-<p class="work-sample-desc">
+<ul>
    <!-- I discovered that Python is a headache for web deployment.
         Gotta deal with shebangs not being cross-platform friendly,
         and installing custom installations of Python on shared
         servers so you can get what libraries you need. PHP is
         much faster and much friendlier.                        -->
-   Developed for an online community that I support. Python and
-   JavaScript back-end utilizing MySQL and Google Apps Script API
-   to create, update, and read generated Google Documents and integrate
-   with Discord for automatic notifications. JavaScript, HTML, and
-   CSS front-end with high focus on a smooth and intuitive user experience.
-   I've also authored several other automation scripts with Python and Google Apps Scripts to parse incoming emails, scan and post daily calendar notifications, scrape website data, etc.
-</p>
+   <li>Innovative solution with Python and JavaScript back-end utilizing Google Apps Scripts to create and manipulate Google Documents and integrate with Discord for automatic notifications, streamlining our application process.</li>
+   <li>JavaScript, HTML, CSS front-end meeting goals of high reliability and privacy – nobody wants to have their work compromised.</li>
+   <li>Further employed the technologies learned to optimize other systems in our community, such as automating Google Calendar posts, parsing and posting emails from Google Groups, and scraping website data and compiling digests.</li>
+</ul>
 
 <!--
 <p class="work-sample-desc">
@@ -516,32 +528,34 @@ a {
    about Google APIs. Running into bugs<sup>2</sup> didn't help
    either.
 </p>-->
-<div class="work-sample-title">
+
+<!-- A little tweak on the positioning. -->
+<div class="work-sample-title" style="margin-top: -5px">
    <!-- I made one item that you use to nuke a server that costed
         $100. It spawns chickens until the server crashes while
         making everyone invincible with explosions and fire
         everywhere. We sold like 7 of them. (5 to one guy...) -->
    Community Store Website (2014)
+   <div class="work-sample-stack">
+      <span class="stack">HTML</span>
+      <span class="stack">CSS</span>
+      <span class="stack">PHP</span>
+      <span class="stack">MySQL</span>
+      <br>
+      <span class="stack">Steam</span>
+      <span class="stack">PayPal</span>
+   </div>
 </div>
-<div class="work-sample-stack">
-   HTML, CSS, PHP, MySQL, SourcePawn, Steam, PayPal
-</div>
+
 <div class="work-sample-link">
    <a href="https://github.com/mukunda-/rxgstore">github.com/mukunda-/rxgstore</a> • <a href="https://store.reflex-gamers.com">store.reflex-gamers.com</a>
 </div>
 
-<p class="work-sample-desc">
-   Worked with one partner to develop. I drafted the initial site and back-end
-   which was deployed for a period before my partner overhauled it with the
-   CakePHP framework for additional features and a better UI/aesthetic. The
-   income generated from this small store worked well to cover our game-server
-   expenses and keep our community running.
-</p>
-<p class="work-sample-desc">
-   PHP back-end using the PayPal REST API to handle payments, and custom
-   integration with our game-servers to link purchases to in-game items
-   developed by me as server plugins.
-</p>
+<ul>
+<li>A team project which doubled the revenue for our small community. Worked well to cover all of our growing expenses.</li>
+<li>I created the initial back-end from the ground up using PHP, PayPal REST APIs, Steam integration, and self-made interfaces to link purchases to our game-servers.</li>
+<li>Final result maximizes traffic potential through ease of use.</li>
+</ul>
 <div class="work-sample-footer">
    Additional samples for any technologies listed are available upon request.
 </div>
@@ -557,14 +571,14 @@ a {
 <p class="work-sample-desc">
    How are you, by the way? Has someone asked how your day was?
 </p>-->
-<div class="header">
+<div class="header" style="margin-top: 0.15in">
    Work History
 </div>
 <ul>
    <li>
       Freelance Coding and Consulting
       <span class="work-history-duration">2004–Current</span>
-      <p class="work-history-note">Datel (UK), Crunchy Development (@StoneCypher), Piko Interactive, and other individuals.<br>Blooming Hill Software Consultant (720-316-6197)</p>
+      <p class="work-history-note">Clients include Datel (published game title), Crunchy Development/@StoneCypher (building a leading-edge audio library), Piko Interactive (my game is in the product that founded their company), Blooming Hill Denver/720-316-6197 (primary, reliable software consultant).</p>
    </li>
    <li>
       <!-- We were supposed to stay in the first house, but we sold it to
@@ -573,7 +587,7 @@ a {
       <span class="work-history-duration">2004–2008, 2013–2016</span>
       <p class="work-history-note">
          A healthy balance to my computer pursuits, this is my family's
-         trade and includes construction of two houses from the ground up and
+         trade and includes construction of two beautiful homes from the ground up and
          hands on experience with foundation, framing, flooring, drywall,
          electrical, plumbing, and HVAC.
       </p>
@@ -594,8 +608,8 @@ a {
 </div>
 <div class="notes">
    <ol>
-      <li>This résumé is hand-written by me in HTML and CSS – <a href="https://github.com/mukunda-/resume">github.com/mukunda-/resume</a>.</li>
-      <li>What I was entertaining myself with in 2007: <a href="http://mukunda.com/stuff/SPCTECH.html">mukunda.com/stuff/SPCTECH.html</a></li>
+      <li>This résumé is designed and hand-written by me in HTML and CSS – <a href="https://github.com/mukunda-/resume">github.com/mukunda-/resume</a>.</li>
+      <li>Experience with extremely low-level systems 13 years ago: <a href="http://mukunda.com/stuff/SPCTECH.html">mukunda.com/stuff/SPCTECH.html</a></li>
    </ol>
 </div>
 
