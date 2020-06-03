@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
    <head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- Disable search engine indexing. -->
+      <meta name="robots" content="noindex">
       <meta name="viewport" content="width=8.5in">
       <meta name="description" content="Mukunda Johnson's Programmer Résumé">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <title>Mukunda Johnson – Programmer</title>
       <style>
 /* ------------------------------------------------------------------------- */
@@ -24,183 +25,170 @@ body {
    
    font-family: Roboto;
    
-   /* I hope this isn't too small. Can't have too many words on a résumé, either. */
+   /* This should be large enough to easily read - shouldn't have too many
+      words on a resume either. */
    font-size: 11pt;
 }
 
 /* Main container, size of a paper. */
 .page {
-   /* Résumé paper has to be THIS SIZE. NO EXCEPTIONS. */
-   /* Never really used inches specifier before. */
-   width: 8.5in;
-   height: 11in;
+   /* 8.5"x11" is the standard resume paper size. No exceptions. */
+   width:      8.5in;
+   height:     11in;
    box-sizing: border-box;
    
-   /* Center the paper on the display, and offset it a little vertically. */
+   /* When viewing in a browser (as opposed to printing), give a little
+      margin on the top and center it horizontally. */
    margin: 32px auto;
    
-   /* A faint shadow to make it pop. */
+   /* A faint shadow. */
    box-shadow: 0px 0px 4px rgba( 0, 0, 0, 0.1 );
    
-   /* A faint shadow to make it pop. */
    background-color: #fff;
 }
 
 /* ------------------------------------------------------------------------- */
-/* A slick left column to bullet my toolkit and highlight personal info.     */
-.side-column {
+/* The left column with bullets for toolkit and personal info.               */
+aside {
    /* 2-inch column. */
-   width: 2in;
+   width:  2in;
    height: 100%;
-   float: left;
+   float:  left;
    
-   /* Include padding in overall size. */
+   /* border-box: include padding in overall size. */
    box-sizing: border-box;
-   padding: 0.2in;
+   padding:    0.2in;
    
    /* Millenial Blue by Skyblue2u (colourlovers.com). */
    background-color: #025D8C;
    
-   /* Condensed font for this. */
+   /* Use condensed font here. */
    font-family: Roboto Condensed;
-   font-size: 12pt;
-   color: white;
+   font-size:   12pt;
+   color:       white;
 }
 
-/* For a resume photo. But for some reason photos are not recommended. */
-.side-column .happymug {
-   width: 90%;
-   margin: -3px auto 8px auto;
-}
-
-.side-column .happymug img {
-   width: 100%;
-   filter: drop-shadow( 0px 0px 1px rgba(255, 255, 255, 0.5));
-}
-
-/* Name field, large imposing letters. */
-.side-column .name {
-   font-size: 1.0em;
-   letter-spacing: 1.15px; /* Adjust this to fill the width. */
-   font-weight: bold;
+/* Name field - large letters. */
+aside .name {
+   font-size:      1.0em;
+   letter-spacing: 1.15px; /* Adjust this manually to fill the width. */
+   font-weight:    bold;
    text-transform: uppercase;
-   border-bottom: 1px solid #fff;
+   border-bottom:  1px solid #fff;
 }
 
-/* The line under the name. */
-.side-column .profession {
-   font-weight: 300;
-   font-size: 0.8em;
+/* The subtext under the name. */
+aside .profession {
+   font-weight:    300;
+   font-size:      0.8em;
    text-transform: uppercase;
 }
 
-/* The dividers. */
-.side-column .header {
-   font-weight: bold;
+/* The section headers/dividers. */
+aside h2 {
+   font-size:      1.0em;
+   font-weight:    bold;
    text-transform: uppercase;
-   margin-top: 0.1in;
-   border-bottom: 1px solid #fff;
+   margin-top:     0.1in;
+   border-bottom:  1px solid #fff;
 }
 
-/* Give lists a little more modern feel. */
-.side-column ul {
-   font-size: 0.9em;
-   list-style-type: square;
+/* Give lists a little more modern feel - bullet shape and such. */
+aside ul {
+   font-size:            0.9em;
+   list-style-type:      square;
    padding-inline-start: 25px;
-   margin-top: 0.05in;
+   margin-top:           0.05in;
 }
 
-.side-column li {
-   padding-left:none;
-   #background-color:red;
+aside li {
+   padding-left: 0;
 }
 
 /* The contact links under the name. */
-.side-column .link {
-   font-size: 0.8em;
+aside .link {
+   font-size:  0.8em;
    margin-top: 0.1in;
 }
 
 /* Override Google Voice extension style. */
 .gc-cs-link {
-   color: inherit !important;
+   color:           inherit !important;
    text-decoration: inherit !important;
 }
 
-.side-column .link img {
+aside .link img {
    vertical-align: middle;
-   margin-right: 0.05in;
-   margin-left: -2px;
+   margin-right:   0.05in;
+   margin-left:    -2px;
    
    /* A bit difficult to get the positioning for these kinds of things to
       feel just right. */
    position: relative;
-   top: -1px;
+   top:      -1px;
 }
 
 /* ------------------------------------------------------------------------- */
 /* Main content entities. */
-.main-column {
-   width: 6.5in;
-   height: 11in;
-   float: right;
+main {
+   width:      6.5in;
+   height:     11in;
+   float:      right;
    box-sizing: border-box;
    text-align: justify;
 }
 
 /* Section dividers. */
-.main-column .header {
-   font-weight: bold;
-   font-size: 1.2em;
+main h2 {
+   font-weight:    bold;
+   font-size:      1.2em;
    text-transform: uppercase;
-   border-bottom: 1px solid #025D8C;
+   border-bottom:  1px solid #025D8C;
    
    margin: 0.1in 0.2in 0 0.2in;
-   color: #025D8C;
+   color:  #025D8C;
 }
 
 /* These are a little iffy. Should ul be in a container or no? */
-.main-column ul, .main-column ol {
-   margin-left: 0.05in;
-   margin-top: 0.1in;
+main ul, main ol {
+   margin-left:  0.05in;
+   margin-top:   0.1in;
    margin-right: 0.2in;
 }
 
 /* Square bullets give a little more of a modern feel. */
-.main-column ul {
+main ul {
    list-style-type: square;
 }
 
-/* A nice little quote at the top to start things off. */
+/* The flavor text at the top. */
 .special-seasoning {
-   font-style: italic;
+   font-style:  italic;
    font-family: Constantia;
-   font-size: 0.8em;
-   margin-top: 0px;
-   text-align: center;
-   background: #eee; /* eee is my goto for a softer white. */
-   padding: 0.2in;
+   font-size:   0.8em;
+   margin-top:  0px;
+   text-align:  center;
+   background:  #eee; /* #eee is my goto for a softer white. */
+   padding:     0.2in;
 }
 
 /* A bolder text for the work sample titles. */
 .work-sample-title {
-   margin: 0.1in 0.2in 0 0.2in;
+   margin:      0.1in 0.2in 0 0.2in;
    font-weight: bold;
-   font-size: 1.1em;
+   font-size:   1.1em;
 }
 
 /* The technology stack is detailed under the title. */
 .work-sample-stack {
-   margin: 0 0.0in 0 0.2in;
+   margin:         0 0.0in 0 0.2in;
    text-transform: uppercase;
-   font-size: 0.8em;
-   float: right;
-   font-weight: normal;
-   text-align: right;
-   line-height: 1.35em;
+   font-size:      0.8em;
+   float:          right;
+   font-weight:    normal;
+   text-align:     right;
+   line-height:    1.35em;
 }
-
-.work-sample-stack .stack {}
 
 /* Links are given under the stack. */
 .work-sample-link {
@@ -218,46 +206,53 @@ body {
 }
 
 /* The section that notes additional sample requests. */
-.work-sample-footer {
-   font-size: 0.8em;
+.ask-me-anything {
+   font-size:  0.8em;
    font-style: italic;
    text-align: center;
-   margin: 0.1in 0;
-   padding: 0.1in;
+   margin:     0.1in 0;
+   padding:    0.1in;
    background: #eee;
 }
 
 /* A little subtext under the work history title. */
 .work-history-note {
-   font-size: 0.8em;
+   font-size:  0.8em;
    font-style: italic;
-   margin: 0;
+   margin:     0;
 }
 
-/* The year range. I'm pretty sure floats don't belong in <p>, but it works. :) */
+/* The year range. (I believe floats may not belong in <p>, but it still
+   works.) */
 .work-history-duration {
    font-size: 0.8em;
    float: right;
 }
 
-/* Default superscript size seems way too big. */
+/* The default superscript size seemed way too large. */
 sup {
    font-size: 0.6em;
 }
 
 /* The footnotes at the bottom. */
-.notes {
+footer {
    font-size: 0.8em;
 }
 
-/* Hide all anchor styles, as this should look like a physical paper. */
+/* Hide all anchor styles. This should look like a physical paper. */
 a {
-   color: inherit;
+   color:           inherit;
    text-decoration: inherit;
 }
 
-/* A little magic to make the "Print to PDF" feature work. You should also
- * set the margins for the result to None in the print settings.             */
+/* Hidden elements are to satisfy the HTML spec. They're only for computers to
+   read. */
+.hide {
+   display: none;
+}
+
+/* This is for printing (as well as saving to PDF). You should also set the
+   margins for the result to None in the print settings. */
 @media print and (color) {
    * {
       -webkit-print-color-adjust: exact; 
@@ -274,329 +269,330 @@ a {
    </head>
    <body>
       <div class="page">
-         <div class="side-column">
+         <aside>
 <!---------------------------- BEGIN SIDE COLUMN ----------------------------->
-
-<!-- Sometimes I wish I had a more ambiguous name. -->
-<div class="name">Mukunda Johnson</div>
-<!-- Programmers are not software engineers. -->
-<div class="profession">Programmer</div>
-
+<section>
+   <h2 class="hide">Name and Profession</h2>
+   <div class="name">Mukunda Johnson</div>
+   <div class="profession">Programmer</div>
+</section>
 <!-- Contact information. -->
-<div class="link"><img src="img/home.png">Carriere, MS</div>
-<div class="link"><a href="https://mukunda.com"><img src="img/globe.png">mukunda.com</a></div>
-<div class="link"><a href="mailto:mukunda@mukunda.com"><img src="img/mail.png">mukunda@mukunda.com</a></div>
-<div class="link"><a href="https://mukunda.com/portfolio"><img src="img/portfolio.png">mukunda.com/portfolio</a></div>
-<div class="link"><a href="https://github.com/mukunda-"><img src="img/octocat.png">github.com/mukunda-</a></div>
-<div class="link"><a href="https://linkedin.com/in/mukunda-johnson"><img src="img/linkedin.png">/in/mukunda-johnson</a></div>
-<div class="link"><a href="tel:+16014635358"><img src="img/cell.png">601-463-5358</a></div>
+<section>
+   <h2 class="hide">Contact Information</h2>
+   <!-- HTML spec requires alt attribute for all <img> tags. "" means the user
+        doesn't need the image to understand the content. -->
+   <div class="link"><img src="img/home.png" alt=""
+      >Carriere, MS</div>
+   <div class="link"><a href="https://mukunda.com"><img src="img/globe.png" alt=""
+      >mukunda.com</a></div>
+   <div class="link"><a href="mailto:mukunda@mukunda.com"><img src="img/mail.png" alt=""
+      >mukunda@mukunda.com</a></div>
+   <div class="link"><a href="https://mukunda.com/portfolio"><img src="img/portfolio.png" alt=""
+      >mukunda.com/portfolio</a></div>
+   <div class="link"><a href="https://github.com/mukunda-"><img src="img/octocat.png" alt=""
+      >github.com/mukunda-</a></div>
+   <div class="link"><a href="https://linkedin.com/in/mukunda-johnson"><img src="img/linkedin.png" alt=""
+      >/in/mukunda-johnson</a></div>
+   <div class="link"><a href="tel:+16014635358"><img src="img/cell.png" alt=""
+      >601-463-5358</a></div>
+</section>
+<!-- This should be kept to actual proficiencies, fields that I am fairly
+     experienced with already and can step into quickly, not "potential"
+     fields. I should be able to immediately pass a basic assessment on them.
+     -->
+<section>
+   <h2>Proficiencies</h2>
+   <ul class="list">
+      <!-- C++ and C are separated, because they are two very different languages
+         at this point. -->
+      <li>C++</li>
+      <li>C</li>
+      <!-- JavaScript is one of my most used languages, and a lot of it can be
+         seen in my GitHub projects. My portfolio is the latest example. -->
+      <li>JavaScript</li>
+      <!-- I've done a lot of scriptin with Python, including some buildsystem
+         work, email parsing, forum scanning, automated calendar notifications,
+         etc. It's my go-to for utility and automation. -->
+      <li>Python</li>
+      <!-- It typically takes me longer to implement something because I'm always
+         thinking about corner cases and being conformant to modern expectations. 
+         I'm also fairly strong with security and privacy, which is much more
+         pronounced in my more recent projects. -->
+      <li>Best Practices</li>
+      <!-- I actually really like raw CSS. -->
+      <li>HTML/CSS<sup>1</sup></li>
+      <!-- My PHP experience is dated, but I have done a bunch of sites with it
+         and could get back into it quickly. -->
+      <li>PHP</li>
+      <!-- I have written Java, and I'm confident that I can work with it, but I am
+         not confident that I can pass a Java exam on the spot. -->
+      <!-- <li>Java</li> -->
+      <!-- My first language. (I was 8.) -->
+      <li>Basic</li>
+      <!-- Experience with 6502, 65816, SPC-700, Z80, and x86; 8-bit, 16-bit, and
+         32-bit computers. The SPC-700 was a 500 KHz processor! -->
+      <li>Assembly Language</li>
+      <!-- This is mostly from World of Warcraft modifications (which I have
+         written a lot of). I've used it with the premake build system too. 
+         Lua is a beautiful language, but it's not great for general purpose
+         scripting (poor library power compared to Python). -->
+      <li>Lua</li>
+      <!-- I'm well-versed with Git. I might not have experience with all of its
+         features, but I know what they are and what they can do. I've even done
+         an hour tutoring session with someone (for $50/hr), going through the
+         basics and identifying some issues they were having with their
+         repository. -->
+      <li>Git DVCS</li>
+      <!-- I have done a lot of MySQL, even writing some wrappers for their
+         C++ connector with complete error handling support - that is, charting
+         out which errors are fatal and which can be recovered from, and
+         automatically retrying transactions. 
+         
+         Lately I haven't done much of this, but I'm certainly familiar with
+         everything. -->
+      <li>MySQL</li>
+      <!-- Leaving this out because there is already an example on the page, and
+         it's not a huge specialization of mine. -->
+      <!-- <li>Google Apps Scripts</li> -->
+      <!-- I have fitted a complete game with graphics and sound in 256 KB of
+         memory. (https://github.com/mukunda-/superwings) -->
+      <li>Embedded Platforms<sup>2</sup></li>
+      <!-- I've had mukunda.com since 2009, and while I'm not a Linux guru, I can
+         get around in the shell and set things up. Like for example, I installed
+         a custom Python3 installation recently to access the Google Apps Scripts
+         libraries. -->
+      <li>Webservers</li>
+      <!-- Just something I enjoy. I do a lot of creative writing, and my grammar
+         is excellent these days. -->
+      <li>English Writing</li>
+   
+      <!-- Other notable things that haven't made the cut:
+         * UX Design - not my specialty, but my lengthy history with computers
+            gives me a strong sense for it.
+         * APIs - REST APIs and the like, I have used a lot of different APIs and
+            have a decent grasp on what makes an API easy to work with.
+         * Discord - I've done a handful of work integrating different services
+            with Discord, like calendars, forums, etc.
+         * Regular expressions - seems like a basic expectation, but I have
+            just written a lot of regexes. 
+         -->
+   </ul>
+</section>
+<section>
+   <h2>Tools</h2>
+   <ul class="list">
+      <!-- This seems like such an unimportant thing to list, but no. Windows is
+         my preferred environment, not Linux. This is a commonly asked
+         question. -->
+      <li>Windows®</li>
+      <!-- The IDE that I use the most, but lately for web development, I have been
+         using Visual Studio Code. -->
+      <li>Visual Studio</li>
+      <!-- My preferred browser and development environment. -->
+      <li>Chrome DevTools</li>
+      <!-- Absolutely love Google's tools. -->
+      <li>G Suite</li>
+      <!-- My primary repository host. -->
+      <li>GitHub</li>
+      <!-- Have used Photoshop for more than ten years. -->
+      <li>Photoshop</li>
+      <!-- I want to list this, but it's very limited experience, rendering
+         animated particle effects and such. -->
+      <!--<li>Adobe After Effects</li>-->
+      <!-- For video and sound editing. I think Sony did a great job with its
+         intuitive interface. -->
+      <li>Sony Vegas</li>
+   </ul>
+</section>
+<section>
+   <h2>Background</h2>
+   <ul class="list">
+      <!-- Strong with learning technologies on my own. -->
+      <li>Self-Educated</li>
 
-<!-- Keyword current, because I learn new stuff a lot. -->
-<div class="header">Proficiencies</div>
-<ul class="list">
-   <!-- Too many people think that C and C++ are the same
-        language category and lump them together. -->
-   <li class="expert">C++</li>
-   <li class="expert">C</li>
-   <!-- I might be a tiny bit behind on ES6 today. -->
-   <li class="expert">JavaScript</li>
-   <!-- I forgot Python like three times.
-         1. Use it to write a script at some point.
-         2. Forget everything.
-         3. Repeat.              -->
-   <li class="expert">Python</li>
-   <!-- Well versed with security/privacy issues, deprecated functions, 
-        convention violations, md5 hashes, inner loop operations, WET
-        code, unhandled exceptions, etc. -->
-   <li class="expert">Best Practices</li>
-   <!-- Kinda awkward to even put the easiest technology of them
-        all on here. -->
-   <!-- I actually really like raw CSS. -->
-   <li class="expert">HTML/CSS<sup>1</sup></li>
-   <!-- Fell out of touch with this one. -->
-   <li>PHP</li>
-   <!-- One time I wanted to write Minecraft plugins, so I sat down
-        and read the Java manual for 3 days. I can see why people
-        like Java. It's very well structured and their documentation
-        and recommended practices are superb. They really know what
-        they're talking about in the manual. I liked the example
-        they describe about livelocks - two people in a hallway
-        trying to pass each other. Or what they say about documenting
-        code, and how documentation and code conventions are given. -->
-   <!-- <li>Java</li> -->
-   <!-- My first language. I was 8. -->
-   <li>Basic</li>
-   <!-- I could get technical here and list 6502, 65816, SPC-700,
-        and Z80 assembly, too. They're all technically different
-        languages and technologies.
-        
-        Did you know that the SPC-700 was a 500 KHZ processor? -->
-   <li class="expert">Assembly Language</li>
-   <!-- Lua is so well designed (except for the index base being 1
-        which makes porting a pain in the ass). If only it had
-        strong library support like Python. -->
-   <li class="expert">Lua</li>
-   <!-- One time someone wanted me to tell him about Git for 45
-        mins. Easiest $50 I ever made.                          
-        The term "DVCS" is a hint of proof of my knowledge.    -->
-   <li class="expert">Git DVCS</li>
-   <!-- Went from writing wrappers for the C++ connector that
-        handles every error tier to forgetting all of it.       -->
-   <li class="expert">MySQL</li>
-   <!-- I used to avoid using libraries, just because. I used to
-        suffer a lot. -->
-   <li>jQuery</li>
-   <!-- The documentation for this is not that great. -->
-   <li>Google Apps Script</li>
-   <!-- Kids these days don't know how to fit a complete game into
-        256 KB of memory. -->
-   <li class="expert">Embedded Platforms<sup>2</sup></li>
-   <!-- It's fun logging into the shell. -->
-   <li>Webservers</li>
-   <!-- I even wrote a book that made fun of all of my friends. -->
-   <li>English Writing</li>
-   <!-- UX. NOT UI. -->
-   <!-- <li class="expert">UX Design</li> -->
-   <!-- I've designed some REST APIs, too, but I was always lazy
-        when it came to employing web frameworks for a proper
-        result.                                               -->
-   <!-- <li>REST APIs</li> -->
-   <!-- Is this even significant? I make a mean regex anyway. -->
-   <!-- <li class="expert">RegEx</li>  -->
-   <!-- More like just webhooks... -->
-   <!-- <li>Discord</li> -->
-   <!-- Accepting Criticism    EXPERT -->
-   <!-- Useless Documentation  EXPERT -->
-</ul>
+      <!-- Limited professional experience that has been accumulated over the years
+         from various small-time paid projects. -->
+      <li>1 Year Professional Freelance</li>
 
-<div class="header">Tools</div>
-<!-- Like any of this is important, heh. -->
-<ul class="list">
-   <!-- When I was a kid, I wanted to install Linux and was asking
-        around for advice on good flavors of it. Someone told me
-        that its a waste of time. 
-        
-        That's why I still suck at using Bash effectively. -->
-   <li>Windows®</li>
-   <!-- I write a mean Visual Basic program. -->
-   <li>Visual Studio</li>
-   <!-- Firefox has great developer tools too. -->
-   <li>Chrome DevTools</li>
-   <!-- For all your Nintendo Needs. -->
-   <!-- <li>devKitPro</li> -->
-   <!-- Once upon a time I had a dream that I would implement
-        proper C++ macros in Clang.                             -->
-   <!--<li>Clang</li>-->
-   <!-- Google sucks at documenting this, trust me. -->
-   <li>G Suite</li>
-   <!-- One time, I even made my own webhook operation... -->
-   <li>GitHub</li>
-   <!-- Actually, I am decent at Photoshop... -->
-   <li>Photoshop</li>
-   <!-- Haven't used this for years. -->
-   <!--<li>Adobe After Effects</li>-->
-   <!-- Sony does a great job with the interface to make it easy
-        to use. If only it wasn't so weak.                      -->
-   <li>Sony Vegas</li>
-</ul>
-
-<div class="header">Background</div>
-<ul class="list">
-   <!-- Is there a better way to write "no degree"? -->
-   <li>Self-Educated</li>
-   <!-- Freelance means shit all, really. -->
-   <li>1 Year Professional Freelance</li>
-   <li>15 Years Independent Projects</li>
-</ul>
-
+      <!-- These are unpaid projects, something that I just really enjoy doing. -->
+      <li>15 Years Independent Projects</li>
+   </ul>
+</section>
 <!----------------------------- END SIDE COLUMN ------------------------------>
-         </div>
-         <div class="main-column">
+         </aside>
+         <main>
 <!---------------------------- BEGIN MAIN COLUMN ----------------------------->
 
 <p class="special-seasoning">
    <!-- I really like this quote. -->
    “Thoroughly conscious ignorance is the prelude to every real advance in knowledge.” – James Clerk Maxwell
 </p>
-<div class="header">
-   About Me
-</div>
-<p class="work-sample-desc">
+
+<section>
+   <h2>About Me</h2>
    <ul>
-      <!-- No substance to this bullet.
-      <li>
-         <!-- I get jealous when people are better than me. 
-         Ambitious, competitive personality that loves to create
-         clever solutions.
-      </li> -->
       <li> 
-         <!-- You think I haven't sat in front of a computer for
-              15 years? -->
-         Lifelong programmer – over 15 years of low-level and 
-         high-level experience through myriad independent projects.
-         See my portfolio. <!-- Peep my portfolio. -->
+         <!-- 15 years was when I started getting more into programming, but I
+            started 22 years ago. -->
+         Lifelong programmer – 15 years of low-level and high-level experience
+         through myriad independent projects. See my portfolio.
       </li><li>
-         <!-- I was 14 and didn't even know where to put the money. -->
+         <!-- A special thank you to the #gbadev community and @StoneCypher for
+            connecting me to this opportunity. -->
          Sold first game to Datel (UK) when I was 14 years old.
       </li><li>
-         <!-- On Windows, the cancel button is on the right. On Mac,
-              it's backwards. -->
-         Extensive background with computers – smooth UX understanding is natural.
+         <!-- This is more of a general reminder than proof of something. Using
+            computers is practice of using computers - and that offers UX
+            design insight naturally. Plus I've just seen a lot of trivia; for
+            example, I know the Cancel dialog button on Windows is in the
+            opposite spot on Mac. -->
+         Extensive background with computers – smooth UX understanding is
+         natural.
       </li><li>
-         <!-- I'll avoid too many stupid comments in production code. -->
-         Well-practiced with best coding standards and training myself in new fields.
+         <!-- My broad experience helps a lot with learning new things. -->
+         Well-practiced with best coding standards and training myself in new
+         fields.
       </li><li>
-         <!-- Twitch chat exploded with people laughing that Ion is
-              actually addressing the roleplay community. -->
-         My projects often attract attention – Blizzard
-         Entertainment's World of Warcraft Game Director talked
-         about my project in live Q&amp;A session due to
-         its unique impact.
+         <!-- December 2018 Q&A regarding Cross RP. -->
+         My projects often attract attention – Blizzard Entertainment's World
+         of Warcraft Game Director talked about my project in live Q&amp;A
+         session due to its unique impact.
       </li><li>
-         <!-- Been writing technical documents since I was a wee thing. -->
-         Prolific hobbyist writer – enamored by the profound art of composing words.
+         <!-- In my earlier years, a lot of this experience is from writing 
+            technical documents that describe how my projects work or how to
+            use them.
+            
+            More recently, I've practiced a lot more creative writing and
+            mastered my grammar. I've used this skill recently for writing
+            some market copy for a company. -->
+         Prolific hobbyist writer – enamored by the profound art of composing
+         words.
       </li><li>
-         <!-- Comes with a side of ADHD. -->
-         Analytical – I see problems early and always try to offer more than the obvious.
+         <!-- When someone says something is "OK", I know they are holding
+            back. -->
+         I value honest criticism. While creating, I insist my peers tell me
+         what they don't like.
       </li><li>
-         <!-- Like seriously, if you say something is okay the first time, I know
-              you're holding back. -->
-         I value honest criticism. While creating, I insist my
-         peers tell me what they don't like.
+         <!-- I simply love coding. -->
+         Avid open-source contributor. I enjoy conference talks, reading blogs,
+         and love to discuss technology.
       </li><li>
-         <!-- I LOVE CODING. -->
-         Avid open-source contributor. I enjoy conference talks, reading blogs, and love to discuss technology.
-      </li><li>
-         Always learning and reminding myself that there is room to
-         grow.
+         Always learning and reminding myself that there is room to grow.
       </li>
    </ul>
-</p>
-<div class="header">
-   Work Samples
-</div>
-<div class="work-sample-title">
-   <!-- Some of my latest projects are actually pretty cool. Like,
-        generating and modifying Google Documents, and using them
-        like information storage? Very neato. -->
-   Community Application Site (2020)
-   <div class="work-sample-stack">
-      <span class="stack">HTML</span>
-      <span class="stack">CSS</span>
-      <span class="stack">Python</span>
-      <span class="stack">MySQL</span>
-      <span class="stack">JavaScript</span>
-      <br>
-      <span class="stack">Google Apps Script</span>
-      <span class="stack">Discord</span>
+</section>
+
+<section>
+   <h2>Work Samples</h2>
+   <section>
+      <header>
+         <div class="work-sample-title">
+            Community Application Site (2020)
+            <div class="work-sample-stack">
+               <span class="stack">HTML</span>
+               <span class="stack">CSS</span>
+               <span class="stack">Python</span>
+               <span class="stack">MySQL</span>
+               <span class="stack">JavaScript</span>
+               <br>
+               <span class="stack">Google Apps Script</span>
+               <span class="stack">Discord</span>
+            </div>
+         </div>
+
+         <div class="work-sample-link">
+            <a href="https://github.com/tmg-pub/tfrapp">github.com/tmg-pub/tfrapp</a>
+         </div>
+      </header>
+      <ul>
+         <li>Innovative solution with Python and JavaScript back-end utilizing Google
+            Apps Scripts to create and manipulate Google Documents and integrate
+            with Discord for automatic notifications, streamlining our application
+            process.</li>
+         <li>JavaScript, HTML, CSS front-end meeting self-declared goals of high
+            reliability and privacy – nobody wants to have their work
+            compromised.</li>
+         <li>Further used the knowledge gained to optimize other systems in our
+            community, such as automating Google Calendar posts, parsing and
+            broadcasting emails from Google Groups, and scraping website data and
+            compiling digests.</li>
+      </ul>
+   </section>
+
+   <section>
+      <header>
+                                 <!-- Ugly hack on the positioning. -->
+         <div class="work-sample-title" style="margin-top: -5px">
+            Community Store Site (2014)
+            <div class="work-sample-stack">
+               <span class="stack">HTML</span>
+               <span class="stack">CSS</span>
+               <span class="stack">PHP</span>
+               <span class="stack">MySQL</span>
+               <br>
+               <span class="stack">Steam</span>
+               <span class="stack">PayPal</span>
+            </div>
+         </div>
+         <div class="work-sample-link">
+            <a href="https://github.com/ReflexGamers/rxgstore">github.com/ReflexGamers/rxgstore</a> • <a href="https://store.reflex-gamers.com">store.reflex-gamers.com</a>
+         </div>
+      </header>
+
+      <ul>
+         <li>A project which doubled the revenue for our small community.
+            Worked well to cover all of our growing expenses.</li>
+         <li>I created the initial back-end from the ground up using PHP, PayPal
+            REST APIs, Steam integration, and self-made interfaces to link
+            purchases to our game-servers.</li>
+         <li>Polished result maximizes traffic potential through ease of use.</li>
+         <li>Completely virtual items I developed have sold for up to $100 each.</li>
+      </ul>
+   </section>
+   <div class="ask-me-anything">
+      I encourage you to ask me about any of my proficiencies listed.
    </div>
-</div>
-
-<div class="work-sample-link">
-   <a href="https://github.com/tmg-pub/tfrapp">github.com/tmg-pub/tfrapp</a>
-</div>
-<ul>
-   <!-- I discovered that Python is a headache for web deployment.
-        Gotta deal with shebangs not being cross-platform friendly,
-        and installing custom installations of Python on shared
-        servers so you can get what libraries you need. PHP is
-        much faster and much friendlier.                        -->
-   <li>Innovative solution with Python and JavaScript back-end utilizing Google Apps Scripts to create and manipulate Google Documents and integrate with Discord for automatic notifications, streamlining our application process.</li>
-   <li>JavaScript, HTML, CSS front-end meeting self-declared goals of high reliability and privacy – nobody wants to have their work compromised.</li>
-   <li>Further used the knowledge gained to optimize other systems in our community, such as automating Google Calendar posts, parsing and broadcasting emails from Google Groups, and scraping website data and compiling digests.</li>
-</ul>
-
-<!-- (too wordy)
-<p class="work-sample-desc">
-   <!-- G Suite documentation is not very fun. A lot of it looks
-        like this:
-          printWord()
-          Prints a word.
-   All technologies in the stack aside from Python were foreign
-   to me at the start. I set user experience goals from features
-   I read from the API documents and learned the technologies
-   required quickly. Nobody in my network has answers to questions
-   about Google APIs. Running into bugs<sup>2</sup> didn't help
-   either.
-</p>-->
-
-                        <!-- Ugly hack on the positioning. -->
-<div class="work-sample-title" style="margin-top: -5px">
-   <!-- I made one item that you use to nuke a server that costed
-        $100. It spawns chickens until the server crashes while
-        making everyone invincible with explosions and fire
-        everywhere. We sold like 7 of them. (5 to one guy...) -->
-   Community Store Site (2014)
-   <div class="work-sample-stack">
-      <span class="stack">HTML</span>
-      <span class="stack">CSS</span>
-      <span class="stack">PHP</span>
-      <span class="stack">MySQL</span>
-      <br>
-      <span class="stack">Steam</span>
-      <span class="stack">PayPal</span>
-   </div>
-</div>
-
-<div class="work-sample-link">
-   <a href="https://github.com/ReflexGamers/rxgstore">github.com/ReflexGamers/rxgstore</a> • <a href="https://store.reflex-gamers.com">store.reflex-gamers.com</a>
-</div>
-
-<ul>
-<li>A team project which doubled the revenue for our small community. Worked well to cover all of our growing expenses.</li>
-<li>I created the initial back-end from the ground up using PHP, PayPal REST APIs, Steam integration, and self-made interfaces to link purchases to our game-servers.</li>
-<li>Polished result maximizes traffic potential through ease of use.</li>
-<li>Completely virtual items I developed sell for up to $100 each.</li>
-</ul>
-<div class="work-sample-footer">
-   Additional samples for any technologies listed are available upon request.
-</div>
-<div class="header" style="margin-top: 0.15in">
-   Work History
-</div>
-<ul>
-   <li>
-      Freelance Coding and Consulting
-      <span class="work-history-duration">2004–Current</span>
-      <p class="work-history-note">Clients include Datel (published game title), Crunchy Development/@StoneCypher (building a leading-edge audio library), Piko Interactive (my work is part of the product that founded their company), Blooming Hill Denver (primary, reliable software consultant).</p>
-   </li>
-   <li>
-      <!-- We were supposed to stay in the first house, but we sold it to
-           move... -->
-      Construction/Apprentice
-      <span class="work-history-duration">2003–2008, 2012–2016</span>
-      <p class="work-history-note">
-         A healthy balance to my computer pursuits, this is my family's
-         trade and includes construction of two beautiful homes from the ground up and
-         hands on experience with renovations, foundation, framing, flooring, drywall,
-         electrical, plumbing, and HVAC. I currently live in a home I built.
-      </p>
-   </li>
-   <!--
-   <li>
-      <!-- I make a mean loaf of cinnamon raisin bread. ->
-      Part-time Chef's Aid at Govinda's Non-profit (Denver)
-      <span class="work-history-duration">2011–2013</span>
-      <p class="work-history-note">
-         An odd job at an odd time, but Denver is a beautiful city.
-      </p>
-   </li>-->
-</ul>
+   <section>
+      <h2>Work History</h2>
+      <ul>
+         <li>
+            Freelance Coding and Consulting
+            <span class="work-history-duration">2004–Current</span>
+            <p class="work-history-note">
+               Clients include Datel (published game title), 
+               Crunchy Development/@StoneCypher (building a leading-edge audio library),
+               Piko Interactive (my work is part of the product that founded their company),
+               and other lesser instances of working with clients and developing
+               apps and scripts.</p>
+         </li>
+         <li>
+            Construction/Apprentice
+            <span class="work-history-duration">2003–2008, 2012–2016</span>
+            <p class="work-history-note">
+               A healthy balance to my computer pursuits, this is my family's
+               trade and includes construction of two beautiful homes from the
+               grass up and hands on experience with renovations, foundation,
+               framing, flooring, drywall, electrical, plumbing, and HVAC. I
+               currently live in a home I built.
+            </p>
+         </li>
+      </ul>
+   </section>
+</section>
 
 <div class="header">
    <!-- Just a divider. -->
 </div>
-<div class="notes">
+
+<footer>
    <ol>
       <li>This resume is designed and hand-written by me in HTML and CSS – <a href="https://github.com/mukunda-/resume">github.com/mukunda-/resume</a>.</li>
       <li>Experience with extremely low-level systems 13 years ago: <a href="http://mukunda.com/stuff/SPCTECH.html">mukunda.com/stuff/SPCTECH.html</a></li>
    </ol>
-</div>
+</footer>
 
 <!----------------------------- END MAIN COLUMN ------------------------------>
-         </div>
+         </main>
       </div>
-      <script>
-      </script>
    </body>
 </html>
